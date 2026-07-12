@@ -1,3 +1,7 @@
+output "logic_app_trigger_http_requests_id" {
+  description = "Map of id values across all logic_app_trigger_http_requests, keyed the same as var.logic_app_trigger_http_requests"
+  value       = { for k, v in azurerm_logic_app_trigger_http_request.logic_app_trigger_http_requests : k => v.id }
+}
 output "logic_app_trigger_http_requests_callback_url" {
   description = "Map of callback_url values across all logic_app_trigger_http_requests, keyed the same as var.logic_app_trigger_http_requests"
   value       = { for k, v in azurerm_logic_app_trigger_http_request.logic_app_trigger_http_requests : k => v.callback_url }
